@@ -80,3 +80,22 @@ export const resetPassword = (credentials) => {
         });
     }
 }
+
+//delete user with firebase
+export const deleteUser = (credentials) => {
+    return (dispatch, getState, {getFirestore,getFirebase}) => {
+        const firebase = getFirebase();
+        // const firestore = getStore();
+
+        firebase.auth().delete(
+            credentials
+        )
+    }
+}
+// var user = firebase.auth().currentUser;
+
+// user.delete().then(function() {
+  // User deleted.
+// }).catch(function(error) {
+  // An error happened.
+// });
